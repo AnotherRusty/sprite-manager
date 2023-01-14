@@ -4,7 +4,7 @@ const path = require('path');
 const accountProviders = require('./packages/sdk/dist/generated/accounts');
 
 const localDeployDir = path.join(__dirname, 'program', 'target', 'deploy');
-const MY_PROGRAM_ID = require("./packages/sdk/idl/my_program_name.json").metadata.address;
+const MY_PROGRAM_ID = require("./packages/sdk/idl/sprite_manager.json").metadata.address;
 
 function localDeployPath(programName) {
     return path.join(localDeployDir, `${programName}.so`);
@@ -12,9 +12,9 @@ function localDeployPath(programName) {
 
 const programs = [
     {
-        label: 'my_program_name',
+        label: 'sprite_manager',
         programId: MY_PROGRAM_ID,
-        deployPath: localDeployPath('my_program_name')
+        deployPath: localDeployPath('sprite_manager')
     },
 ];
 
@@ -25,13 +25,6 @@ const accounts = [
         // marking executable as true will cause Amman to pull the executable data account as well automatically
         executable: true,
     },
-    {
-        label: 'Random other account',
-        accountId:'4VLgNs1jXgdciSidxcaLKfrR9WjATkj6vmTm5yCwNwui',
-        // by default executable is false
-        // providing a cluster here will override the accountsCluster field
-        cluster: 'https://metaplex.devnet.rpcpool.com'
-    }
 ];
 
 const validator = {

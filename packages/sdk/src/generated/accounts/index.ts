@@ -1,5 +1,5 @@
-export * from './AccountThingy';
+export * from './SpriteAccount';
 
-import { AccountThingy } from './AccountThingy';
+import { SpriteAccount } from './SpriteAccount';
 
-export const accountProviders = { AccountThingy };
+export const accountProviders = { SpriteAccount };

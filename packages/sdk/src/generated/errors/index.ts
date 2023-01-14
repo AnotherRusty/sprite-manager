@@ -12,24 +12,147 @@ const createErrorFromCodeLookup: Map<number, () => ErrorWithCode> = new Map();
 const createErrorFromNameLookup: Map<string, () => ErrorWithCode> = new Map();
 
 /**
- * ErrorName: 'Error message'
+ * DerivedKeyInvalid: 'Derived Key Invalid'
  *
  * @category Errors
  * @category generated
  */
-export class ErrorNameError extends Error {
+export class DerivedKeyInvalidError extends Error {
   readonly code: number = 0x0;
-  readonly name: string = 'ErrorName';
+  readonly name: string = 'DerivedKeyInvalid';
   constructor() {
-    super('Error message');
+    super('Derived Key Invalid');
     if (typeof Error.captureStackTrace === 'function') {
-      Error.captureStackTrace(this, ErrorNameError);
+      Error.captureStackTrace(this, DerivedKeyInvalidError);
     }
   }
 }
 
-createErrorFromCodeLookup.set(0x0, () => new ErrorNameError());
-createErrorFromNameLookup.set('ErrorName', () => new ErrorNameError());
+createErrorFromCodeLookup.set(0x0, () => new DerivedKeyInvalidError());
+createErrorFromNameLookup.set('DerivedKeyInvalid', () => new DerivedKeyInvalidError());
+
+/**
+ * AlreadyInitialized: 'Already initialized'
+ *
+ * @category Errors
+ * @category generated
+ */
+export class AlreadyInitializedError extends Error {
+  readonly code: number = 0x1;
+  readonly name: string = 'AlreadyInitialized';
+  constructor() {
+    super('Already initialized');
+    if (typeof Error.captureStackTrace === 'function') {
+      Error.captureStackTrace(this, AlreadyInitializedError);
+    }
+  }
+}
+
+createErrorFromCodeLookup.set(0x1, () => new AlreadyInitializedError());
+createErrorFromNameLookup.set('AlreadyInitialized', () => new AlreadyInitializedError());
+
+/**
+ * FailedToSerialize: 'Failed to serialize'
+ *
+ * @category Errors
+ * @category generated
+ */
+export class FailedToSerializeError extends Error {
+  readonly code: number = 0x2;
+  readonly name: string = 'FailedToSerialize';
+  constructor() {
+    super('Failed to serialize');
+    if (typeof Error.captureStackTrace === 'function') {
+      Error.captureStackTrace(this, FailedToSerializeError);
+    }
+  }
+}
+
+createErrorFromCodeLookup.set(0x2, () => new FailedToSerializeError());
+createErrorFromNameLookup.set('FailedToSerialize', () => new FailedToSerializeError());
+
+/**
+ * FailedToBorrowAccountData: 'Failed to borrow account data'
+ *
+ * @category Errors
+ * @category generated
+ */
+export class FailedToBorrowAccountDataError extends Error {
+  readonly code: number = 0x3;
+  readonly name: string = 'FailedToBorrowAccountData';
+  constructor() {
+    super('Failed to borrow account data');
+    if (typeof Error.captureStackTrace === 'function') {
+      Error.captureStackTrace(this, FailedToBorrowAccountDataError);
+    }
+  }
+}
+
+createErrorFromCodeLookup.set(0x3, () => new FailedToBorrowAccountDataError());
+createErrorFromNameLookup.set(
+  'FailedToBorrowAccountData',
+  () => new FailedToBorrowAccountDataError(),
+);
+
+/**
+ * IncorrectOwner: 'Incorrect account owner'
+ *
+ * @category Errors
+ * @category generated
+ */
+export class IncorrectOwnerError extends Error {
+  readonly code: number = 0x4;
+  readonly name: string = 'IncorrectOwner';
+  constructor() {
+    super('Incorrect account owner');
+    if (typeof Error.captureStackTrace === 'function') {
+      Error.captureStackTrace(this, IncorrectOwnerError);
+    }
+  }
+}
+
+createErrorFromCodeLookup.set(0x4, () => new IncorrectOwnerError());
+createErrorFromNameLookup.set('IncorrectOwner', () => new IncorrectOwnerError());
+
+/**
+ * DataTypeMismatch: 'Data type mismatch'
+ *
+ * @category Errors
+ * @category generated
+ */
+export class DataTypeMismatchError extends Error {
+  readonly code: number = 0x5;
+  readonly name: string = 'DataTypeMismatch';
+  constructor() {
+    super('Data type mismatch');
+    if (typeof Error.captureStackTrace === 'function') {
+      Error.captureStackTrace(this, DataTypeMismatchError);
+    }
+  }
+}
+
+createErrorFromCodeLookup.set(0x5, () => new DataTypeMismatchError());
+createErrorFromNameLookup.set('DataTypeMismatch', () => new DataTypeMismatchError());
+
+/**
+ * NumericalOverflow: 'NumericalOverflowError'
+ *
+ * @category Errors
+ * @category generated
+ */
+export class NumericalOverflowError extends Error {
+  readonly code: number = 0x6;
+  readonly name: string = 'NumericalOverflow';
+  constructor() {
+    super('NumericalOverflowError');
+    if (typeof Error.captureStackTrace === 'function') {
+      Error.captureStackTrace(this, NumericalOverflowError);
+    }
+  }
+}
+
+createErrorFromCodeLookup.set(0x6, () => new NumericalOverflowError());
+createErrorFromNameLookup.set('NumericalOverflow', () => new NumericalOverflowError());
 
 /**
  * Attempts to resolve a custom program error from the provided error code.

@@ -1,0 +1,360 @@
+{
+  "version": "0.1.0",
+  "name": "sprite_manager",
+  "instructions": [
+    {
+      "name": "CreateSpriteAccount",
+      "accounts": [
+        {
+          "name": "escrow",
+          "isMut": true,
+          "isSigner": false,
+          "desc": "Escrow account"
+        },
+        {
+          "name": "metadata",
+          "isMut": true,
+          "isSigner": false,
+          "desc": "Metadata account"
+        },
+        {
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "Mint account"
+        },
+        {
+          "name": "tokenAccount",
+          "isMut": true,
+          "isSigner": false,
+          "desc": "Token account (base token)"
+        },
+        {
+          "name": "edition",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "Edition account"
+        },
+        {
+          "name": "spritePda",
+          "isMut": true,
+          "isSigner": false,
+          "desc": "Sprite PDA account"
+        },
+        {
+          "name": "creator",
+          "isMut": false,
+          "isSigner": true,
+          "desc": "The creator of the global sprite account"
+        },
+        {
+          "name": "tokenMetadataProgram",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "Token Metadata program"
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "System program"
+        },
+        {
+          "name": "sysvarInstructions",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "Instructions sysvar account"
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 0
+      }
+    },
+    {
+      "name": "StoreSprite",
+      "accounts": [
+        {
+          "name": "escrow",
+          "isMut": true,
+          "isSigner": false,
+          "desc": "Escrow account"
+        },
+        {
+          "name": "baseMint",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "Mint account of the base token"
+        },
+        {
+          "name": "spriteMint",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "Mint account of the sprite token"
+        },
+        {
+          "name": "spriteMintSrc",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "Source account of the sprite token"
+        },
+        {
+          "name": "spriteMintDst",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "Destination account of the sprite token"
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "desc": "The creator of the account and manager of the sprite"
+        },
+        {
+          "name": "spritePda",
+          "isMut": true,
+          "isSigner": false,
+          "desc": "The PDA for sprite data"
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "System program"
+        },
+        {
+          "name": "splToken",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "Token program"
+        },
+        {
+          "name": "splAssociatedToken",
+          "isMut": false,
+          "isSigner": false,
+          "desc": "Associated token account program"
+        }
+      ],
+      "args": [
+        {
+          "name": "storeSpriteArgs",
+          "type": {
+            "defined": "StoreSpriteArgs"
+          }
+        }
+      ],
+      "discriminant": {
+        "type": "u8",
+        "value": 1
+      }
+    }
+  ],
+  "accounts": [
+    {
+      "name": "SpriteAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "key",
+            "type": {
+              "defined": "Key"
+            }
+          },
+          {
+            "name": "baseMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "sprites",
+            "type": {
+              "vec": {
+                "defined": "Sprite"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "StoreSpriteArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "perspectiveTags",
+            "type": {
+              "vec": {
+                "defined": "PerspectiveTags"
+              }
+            }
+          },
+          {
+            "name": "styleTags",
+            "type": {
+              "vec": {
+                "defined": "StyleTags"
+              }
+            }
+          },
+          {
+            "name": "customTags",
+            "type": {
+              "vec": "string"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sprite",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "perspectiveTags",
+            "type": {
+              "vec": {
+                "defined": "PerspectiveTags"
+              }
+            }
+          },
+          {
+            "name": "styleTags",
+            "type": {
+              "vec": {
+                "defined": "StyleTags"
+              }
+            }
+          },
+          {
+            "name": "customTags",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "mint",
+            "type": "publicKey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Key",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Uninitialized"
+          },
+          {
+            "name": "SpriteAccount"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PerspectiveTags",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "RPG"
+          },
+          {
+            "name": "TopDown"
+          },
+          {
+            "name": "SideScroller"
+          },
+          {
+            "name": "Platformer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StyleTags",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Pixel"
+          },
+          {
+            "name": "Vector"
+          },
+          {
+            "name": "HandDrawn"
+          },
+          {
+            "name": "Cartoon"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 0,
+      "name": "DerivedKeyInvalid",
+      "msg": "Derived Key Invalid"
+    },
+    {
+      "code": 1,
+      "name": "AlreadyInitialized",
+      "msg": "Already initialized"
+    },
+    {
+      "code": 2,
+      "name": "FailedToSerialize",
+      "msg": "Failed to serialize"
+    },
+    {
+      "code": 3,
+      "name": "FailedToBorrowAccountData",
+      "msg": "Failed to borrow account data"
+    },
+    {
+      "code": 4,
+      "name": "IncorrectOwner",
+      "msg": "Incorrect account owner"
+    },
+    {
+      "code": 5,
+      "name": "DataTypeMismatch",
+      "msg": "Data type mismatch"
+    },
+    {
+      "code": 6,
+      "name": "NumericalOverflow",
+      "msg": "NumericalOverflowError"
+    }
+  ],
+  "metadata": {
+    "origin": "shank",
+    "address": "spritZMFNZQ5axFCT5woqtcxKLTMNupnyowh4qXWhKy",
+    "binaryVersion": "0.0.10",
+    "libVersion": "0.0.10"
+  }
+}

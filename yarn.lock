@@ -2617,39 +2617,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"my-program-name-workspace@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "my-program-name-workspace@workspace:."
-  dependencies:
-    "@metaplex-foundation/amman": ^0.12.1
-    "@metaplex-foundation/solita": ^0.19.0
-    "@typescript-eslint/eslint-plugin": ^5.43.0
-    "@typescript-eslint/parser": ^5.43.0
-    esbuild-runner: ^2.2.2
-    eslint: ^8.27.0
-    eslint-config-prettier: ^8.5.0
-    eslint-plugin-prettier: ^4.2.1
-    prettier: ^2.7.1
-  languageName: unknown
-  linkType: soft
-
-"my-program-name@workspace:packages/sdk":
-  version: 0.0.0-use.local
-  resolution: "my-program-name@workspace:packages/sdk"
-  dependencies:
-    "@metaplex-foundation/beet": ^0.4.0
-    "@metaplex-foundation/beet-solana": ^0.3.0
-    "@metaplex-foundation/cusper": ^0.0.2
-    "@solana/spl-token": ^0.2.0
-    "@solana/web3.js": ^1.48.0
-    eslint: ^8.20.0
-    rimraf: ^3.0.2
-    supports-color: ^9.2.2
-    typedoc: ^0.23.8
-    typescript: ^4.7.4
-  languageName: unknown
-  linkType: soft
-
 "natural-compare-lite@npm:^1.4.0":
   version: 1.4.0
   resolution: "natural-compare-lite@npm:1.4.0"
@@ -3316,6 +3283,39 @@ __metadata:
   checksum: 22fc0ab37ad6314069700d0dae7f878f981fa51d29c478aa1de30aa74f6bdfbb5dee9fe24bfcf59dc234c4240a344139c486ee6e06134a4dd396ab2df75ca18a
   languageName: node
   linkType: hard
+
+"sprite-manager-workspace@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "sprite-manager-workspace@workspace:."
+  dependencies:
+    "@metaplex-foundation/amman": ^0.12.1
+    "@metaplex-foundation/solita": ^0.19.0
+    "@typescript-eslint/eslint-plugin": ^5.43.0
+    "@typescript-eslint/parser": ^5.43.0
+    esbuild-runner: ^2.2.2
+    eslint: ^8.27.0
+    eslint-config-prettier: ^8.5.0
+    eslint-plugin-prettier: ^4.2.1
+    prettier: ^2.7.1
+  languageName: unknown
+  linkType: soft
+
+"sprite-manager@workspace:packages/sdk":
+  version: 0.0.0-use.local
+  resolution: "sprite-manager@workspace:packages/sdk"
+  dependencies:
+    "@metaplex-foundation/beet": ^0.4.0
+    "@metaplex-foundation/beet-solana": ^0.3.0
+    "@metaplex-foundation/cusper": ^0.0.2
+    "@solana/spl-token": ^0.2.0
+    "@solana/web3.js": ^1.48.0
+    eslint: ^8.20.0
+    rimraf: ^3.0.2
+    supports-color: ^9.2.2
+    typedoc: ^0.23.8
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
 
 "ssri@npm:^9.0.0":
   version: 9.0.1

@@ -1,9 +1,9 @@
 {
-  "name": "my-program-name",
+  "name": "sprite-manager",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/src/my-program-name.js",
-  "types": "dist/src/my-program-name.d.ts",
+  "main": "dist/src/sprite-manager.js",
+  "types": "dist/src/sprite-manager.d.ts",
   "scripts": {
     "check:publish-ready": "yarn build && yarn test",
     "postversion": "git add package.json && git commit -m \\\"chore: update $npm_package_name to v$npm_package_version\\\" && git tag $npm_package_name@$npm_package_version",
